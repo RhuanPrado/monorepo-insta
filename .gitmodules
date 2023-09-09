@@ -1,0 +1,6 @@
+[submodule "spa-insta"]
+	path = spa-insta
+	url = https://github.com/RhuanPrado/spa-insta.git
+[submodule "go-api-insta"]
+	path = go-api-insta
+	url = https://github.com/RhuanPrado/go-api-insta.git

@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+  go-app:
+    container_name: go-app
+    build:
+      context: ../go-api-insta  # Substitua pelo caminho para o código da sua aplicação Go
+    ports:
+      - "3003:3003"  # Porta da aplicação Go
+    links:
+      - mongodb-insta  # Conecta ao serviço MongoDB
+    depends_on:
+      - mongodb-insta  # Espera o MongoDB iniciar antes de iniciar a aplicação
+
+  # Serviço do MongoDB
+  mongodb-insta:
+    container_name: mongodb-insta
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: insta
+      MONGO_INITDB_ROOT_PASSWORD: insta
+    ports:
+      - "27017:27017"  # Porta do MongoDB
+
+  # Serviço do Frontend Next.js
+  frontend:
+    container_name: frontend-insta
+    build:
+      context: ../spa-insta # Substitua pelo caminho para o código do seu frontend Next.js
+    ports:
+      - "3000:3000"  # Porta do frontend
+    depends_on:
+      - go-app  # Espera a aplicação Go iniciar antes de iniciar o frontend
