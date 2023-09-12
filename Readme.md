@@ -81,7 +81,7 @@ http://localhost:3000
 
 - **Adicionar Amigos**: Os usuários podem adicionar outros usuários como amigos.
 
-- **Excluir Amigos**: Os usuários têm a opção de excluir sues amigos.
+- **Excluir Amigos**: Os usuários têm a opção de excluir seus amigos.
 
 - **Explorar Usuários**: Os usuários podem explorar e descobrir outros usuários na plataforma.
 
